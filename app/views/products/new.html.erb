@@ -20,7 +20,7 @@ $(function(){
     var values = $(this).serialize();
     var posting = $.post('/posts', values)
     posting.done(function(data){
-      console.log(done)
+      console.log(data)
     })
   })
 })
