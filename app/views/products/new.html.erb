@@ -18,9 +18,11 @@ $(function(){
   $('form').submit(function(event){
     event.preventDefault();
     var values = $(this).serialize();
-    var posting = $.post('/posts', values)
+    var posting = $.post('/product', values)
     posting.done(function(data){
-      console.log(data)
+      var post = data;
+        $("#productTitle").text(post["title"]);
+        $("#productBody").text(post["description"])
     })
   })
 })
